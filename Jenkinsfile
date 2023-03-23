@@ -28,6 +28,15 @@ pipeline {
                 sh 'mvn clean package'
         }
         }
+        stage ("Static Code Analysis") {
+            environment{
+             scannerHome = tool 'ibt-sonarqube';
     }
+       steps{
+        withSonarQubeEnv(credentialsId: 'SQ-student' installationName: 'IBT sonarqube') ) {
+        sh "$scannerHome/bin/sonar-scanner -Dsonar.projectKey=Jan26_cohort"
+}
+
+
 }
 
