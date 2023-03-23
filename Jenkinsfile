@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("Checkout the project") {
             steps {
-                git branch: 'master', url: 'https://github.com/IBT-learning/hello-maven.git'
+                git branch: 'master', url: 'https://github.com/Bytesrite-Technologies/hello-maven-ibt.git'
             }
             }
         
