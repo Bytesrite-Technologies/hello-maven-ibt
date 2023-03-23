@@ -1,12 +1,12 @@
 pipeline {
     agent any
     tools{
-        maven 'maven_3.8'
+        maven 'maven-3.9.0'
     }
     stages {
         stage("Checkout the project") {
             steps {
-                git branch: 'master', url: 'https://github.com/IBT-learning/hello-maven.git'
+                git branch: 'master', url: 'https://github.com/Bytesrite-Technologies/hello-maven-ibt.git'
             }
             }
         
