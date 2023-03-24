@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+      string(name:'Branch', defaultValue:'master', description:'enter branch to build')
+}
     tools{
         maven 'maven-3.9.0'
     }
