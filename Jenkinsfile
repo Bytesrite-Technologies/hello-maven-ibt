@@ -33,8 +33,8 @@ pipeline {
         }
         stage ("Sonar Quality Check") {
     }
-       steps{
-        script{
+       steps {
+        script {
         withSonarQubeEnv(credentialsId:'jenkins-sonar-token', installationName:'sonar-9') {
         sh 'mvn sonar:sonar'
 }
