@@ -25,18 +25,18 @@ pipeline {
             }
         }
 
+          stage ("Sonar Quality Check") {
+           steps {
+           withSonarQubeEnv(credentialsId:'jenkins-sonar-token', installationName:'sonar-9') {
+           sh 'mvn sonar:sonar'
+
 
         stage ("Build the package") {
             steps {
                 sh 'mvn clean package'
         }
 
-          }
-
-        stage ("Sonar Quality Check") {
-           steps {
-           withSonarQubeEnv(credentialsId:'jenkins-sonar-token', installationName:'sonar-9') {
-           sh 'mvn sonar:sonar'
+          
 }
 
 
