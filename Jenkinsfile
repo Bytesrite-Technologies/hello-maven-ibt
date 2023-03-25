@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage("Checkout the project") {
             steps {
-                git branch: 'master', url: 'https://github.com/Bytesrite-Technologies/hello-maven-ibt.git'
+                git branch: '${Branch}', url: 'https://github.com/Bytesrite-Technologies/hello-maven-ibt.git'
             }
             }
         
